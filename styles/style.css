@@ -1,0 +1,390 @@
+:root {
+    --primarytextcolor: #1a0f0f; /* untuk judul */
+    --secondarytextcolor: #4d4b4b; /* untuk text */
+
+    --bordercolor: #e2e2e2; /*untuk border*/
+
+    --itemborderradius: 0.7rem;
+    --sectionpadding: 6rem 0;
+    --primaryiconcolor:#a83fc9;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, strong {
+    color: var(--primarytextcolor);
+}
+
+p {
+    font-size: 1rem; /* 1rem itu 16px*/
+    line-height: 2rem;
+}
+
+p, label, input, textarea, li {
+    color: var(--secondarytextcolor);
+}
+
+a {
+    text-decoration: none; /*garis dibawahnya hilang */
+}
+
+.container {
+    width:1280px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width:90%;
+    }
+}
+
+/* Button */
+.button {
+    padding: 1rem 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-decoration: underline;
+    color: brown;
+}
+
+.button:hover {
+    text-shadow: rgba(0, 0, 0, 0.09) 0px 3px 5px;
+}
+
+/*Logo dan Navigasi Menu*/
+
+.nav {
+    display:flex;
+    justify-content:space-between;
+    padding:2rem 0;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 1000;
+    font-size: 1rem;
+}
+
+.logo a {
+    color: var(--primarytextcolor);
+}
+
+.nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li a {
+    color: var(--primarytextcolor);
+}
+
+
+/* Burger */
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 7px;
+    transition: all 0.4s;
+    z-index: 99;
+}
+
+.burger {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 40px;
+    right: 40px
+}
+
+/*hero section*/
+#hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*fr artinya fraction yakni artinya dibagi 2 kolom yang sama lebarnya*/
+    align-items: center;
+}
+
+
+/* Kata Kata Hero */
+.hero-left {
+    transform: translateY(-100px) translateX(100px);
+}
+.text1 {
+    text-transform: capitalize;
+    color: #1a0f0f;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.text2 {
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.text2 span {
+    color: brown;
+}
+
+.text3 {
+    font-size: 1.5rem
+}
+
+.hero-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    
+}
+
+.hero-center img {
+    width: 300%;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .3));
+    clip-path: circle(50%);
+ 
+}
+
+.hero-right {
+    transform: translateY(-100px);
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.hero-right ul li {
+    list-style-type: none;
+}
+
+/* layout */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem
+}
+
+/*section titles */
+.section-title {
+    font-size: 24px;
+    margin: 1rem 0 1rem;
+}
+/* Project */
+#projects {
+    background-color: #f1f1f1;
+    padding: 6rem 0;
+}
+
+.project {
+    border-radius: var(--itemborderradius);
+    overflow: hidden;
+    border: 0.1px solid var(--bordercolor)
+}
+
+.project-cover {
+    height: 200px;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 2rem 1rem;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.project h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.project-title a {
+    transition: 0.35s ease-in-out;
+}
+
+.project-title a:hover {
+    fill: var(--primaryiconcolor)
+}
+
+.project-tags {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.project-tags div {
+    font-size: 0.8rem;
+    border: 0.5px solid var(--bordercolor);
+    padding: 0.1rem 1rem;
+    color: rgb(180, 180, 180);
+}
+
+/* Skills & Education */
+
+#skills {
+    padding: var(--sectionpadding);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+}
+
+.education {
+    display: flex;
+    gap: 2rem;
+}
+
+.education .line {
+    padding: 0 0.7rem;
+}
+
+.education .line div {
+    width: 2px;
+    height: 100%;
+    background-color: var(--bordercolor);
+    position: relative;
+}
+
+.education-info p {
+    margin: 0.1rem 0 0.4rem;
+}
+
+.education-years {
+    margin-bottom: 3rem;
+}
+
+/* Titik pada garis */
+
+/*.education .line div:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--bordercolor);
+    border-radius: 50%;
+    position: relative;
+    left: -6px;
+}*/
+
+.skills-list {
+    display: grid;
+    margin-top: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills-right ul {
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+
+/* Contact Section */
+#contacts {
+    padding: var(--sectionpadding);
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.contacts-form {
+    margin-bottom: 1.4rem;
+}
+
+.contacts-form input, .contacts-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: serif;
+    background-color: #f3f2f2;
+    border: 1px solid var(--bordercolor);
+    border-radius: var(--itemborderradius);
+    resize: none;
+}
+
+.contacts-form input::placeholder,
+.contacts-form textarea::placeholder {
+    color: #888888;
+}
+
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+    outline: none;
+    border: 1px solid var(--secondarytextcolor);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: #7b6ccf;
+    color: #e2e2e2;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background: #4b39b4;
+}
+
+.contacts-item-icon {
+    background: #e2e2e2;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contacts-item-icon svg {
+    fill: #7b6ccf;
+}
+
+.contact-info h4 {
+    padding-top: 0.7rem;
+}
+
+/* Footer */
+footer {
+    background-color:#f1f1f1;
+    padding: 0.5rem 0;
+    text-align: center;
+}
